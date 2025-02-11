@@ -8,7 +8,7 @@ pub mod gg18;
 impl ProtocolType {
     pub fn check_threshold(self, threshold: u32, group_size: u32) -> bool {
         match self {
-            ProtocolType::Gg18 | ProtocolType::Elgamal | ProtocolType::Frost => {
+            ProtocolType::Gg18 | ProtocolType::Elgamal | ProtocolType::Frost | ProtocolType::Musig2 => {
                 threshold >= 2 && threshold <= group_size
             }
         }
