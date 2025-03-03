@@ -5,6 +5,7 @@ use crate::proto::{KeyType, ProtocolType, TaskType};
 use crate::protocols::elgamal::ElgamalGroup;
 use crate::protocols::frost::FROSTGroup;
 use crate::protocols::gg18::GG18Group;
+use crate::protocols::musig2::Musig2Group;
 use crate::protocols::Protocol;
 use crate::tasks::{Task, TaskResult, TaskStatus};
 use crate::{get_timestamp, utils};
@@ -48,6 +49,9 @@ impl GroupTask {
             }
             (ProtocolType::Frost, KeyType::SignChallenge) => {
                 Box::new(FROSTGroup::new(devices_len, threshold))
+            }
+            (ProtocolType::Musig2, KeyType::SignChallenge) => {
+                Box::new(Musig2Group::new(devices_len, threshold))
             }
             (ProtocolType::Elgamal, KeyType::Decrypt) => {
                 Box::new(ElgamalGroup::new(devices_len, threshold))

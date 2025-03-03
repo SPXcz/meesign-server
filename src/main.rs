@@ -50,8 +50,8 @@ mod proto {
     impl ProtocolType {
         pub fn index_offset(&self) -> u32 {
             match self {
-                ProtocolType::Gg18 | ProtocolType::Elgamal => 0,
-                ProtocolType::Frost | ProtocolType::Musig2 => 1,
+                ProtocolType::Gg18 | ProtocolType::Musig2 | ProtocolType::Elgamal => 0,
+                ProtocolType::Frost => 1,
             }
         }
     }
