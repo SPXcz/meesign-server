@@ -18,7 +18,7 @@ tempfile = "3.3.0"
 lazy_static = "1.4.0"
 openssl = "0.10.60"
 sha2 = "0.10.6"
-meesign-crypto = { git = "https://github.com/SPXcz/meesign-crypto", branch = "musig2-card-support", default-features = false }
+meesign-crypto = { git = "https://github.com/SPXcz/meesign-crypto", branch = "main", default-features = false }
 
 [build-dependencies]
 tonic-build = "0.10"
